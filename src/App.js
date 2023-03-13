@@ -5,9 +5,9 @@ import AppRouter from "./router/AppRouter";
 const App = () => {
   return (
     <div>
-      <AuthContextProvider />
-      <AppRouter />
-      <AuthContextProvider />
+      <AuthContextProvider>
+        <AppRouter />
+      </AuthContextProvider>
     </div>
   );
 };
