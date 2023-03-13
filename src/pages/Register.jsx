@@ -2,6 +2,11 @@ import React from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 
 const Register = () => {
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { createUser } = useContext(AuthContext);
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
       <div className={`form-container mt-[5vh] w-[380px] h-[580px]`}>
@@ -15,7 +20,8 @@ const Register = () => {
               name="floating_email"
               className="peer"
               placeholder=" "
-              required=""
+              required
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <label htmlFor="floating_email">Email address</label>
           </div>
@@ -25,7 +31,8 @@ const Register = () => {
               type="text"
               required
               className="peer"
-              placeholder=" "
+              placeholder
+              onChange={(e) => setLastName(e.target.value)}
             />
             <label htmlFor="floating_text">Last Name</label>
           </div>
@@ -35,7 +42,8 @@ const Register = () => {
               type="email"
               className="peer"
               placeholder=" "
-              required=""
+              required
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="floating_email">Email</label>
           </div>
@@ -45,7 +53,8 @@ const Register = () => {
               type="password"
               className="peer"
               placeholder=" "
-              required=""
+              required
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="floating_password">Password</label>
           </div>
