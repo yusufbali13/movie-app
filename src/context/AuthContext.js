@@ -1,11 +1,13 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import React, { createContext } from "react";
+import React, { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../auth/firebase";
+import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 
 // export const {Provider} = createContext()
 export const AuthContext = createContext();
@@ -16,7 +18,12 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
-  const createUser = async (email, password) => {
+
+  useEffect(() => {
+    userObserver();
+  }, []);
+
+  const createUser = async (email, password, displayName) => {
     try {
       //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
       let userCredential = await createUserWithEmailAndPassword(
@@ -24,10 +31,14 @@ const AuthContextProvider = ({ children }) => {
         email,
         password
       );
+      //? kullanıcı profilini güncellemek için kullanılan firebase metodu
+      await updateProfile(auth.currentUser, {
+        displayName: displayName,
+      });
       navigate("/");
-      console.log(userCredential);
+      toastSuccessNotify("Registered successfully!");
     } catch (error) {
-      console.log(error);
+      toastErrorNotify(error.message);
     }
   };
 
@@ -39,8 +50,9 @@ const AuthContextProvider = ({ children }) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
+      toastSuccessNotify("Logged in succeccfully");
     } catch (error) {
-      console.log(error);
+      toastErrorNotify(error.message);
     }
   };
 
@@ -48,11 +60,23 @@ const AuthContextProvider = ({ children }) => {
     signOut(auth);
   };
 
+  const userObserver = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { email, displayName, photoURL } = user;
+        setCurrentUser({ email, displayName, photoURL });
+      } else {
+        setCurrentUser(false);
+        console.log("logged out");
+      }
+    });
+  };
+
   const values = {
     createUser,
     signIn,
     logOut,
-    currentUser: { displayName: "Yusuf Balı" },
+    currentUser,
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
