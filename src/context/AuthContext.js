@@ -67,7 +67,7 @@ const AuthContextProvider = ({ children }) => {
         setCurrentUser({ email, displayName, photoURL });
       } else {
         setCurrentUser(false);
-        console.log("logged out");
+        // console.log("logged out");
       }
     });
   };
