@@ -52,7 +52,7 @@ const AuthContextProvider = ({ children }) => {
     createUser,
     signIn,
     logOut,
-    currentUser: { displayName: "felix franko" },
+    currentUser: { displayName: "Yusuf Balı" },
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
