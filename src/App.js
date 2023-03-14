@@ -8,9 +8,10 @@ const App = () => {
   return (
     <div className="dark:bg-gray-dark-main">
       <AuthContextProvider>
-        <MovieContextProvider />
-        <AppRouter />
-        <ToastContainer />
+        <MovieContextProvider>
+          <AppRouter />
+          <ToastContainer />
+        </MovieContextProvider>
       </AuthContextProvider>
     </div>
   );

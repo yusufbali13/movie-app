@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Switch = () => {
-  const [darkmode, setDarkmode] = useState("true");
+  const [darkMode, setDarkMode] = useState(true);
+
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
   return (
     <div className="flex col-span-1 justify-end">
       <button
