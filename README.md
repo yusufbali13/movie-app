@@ -3,10 +3,10 @@
     <img src="https://o.remove.bg/downloads/11536078-e54f-48b7-ad8f-f0588a371931/images-removebg-preview-removebg-preview.png" width="130" height="130">
   </a>
   
-  <h2 align="center">Netxflix App</h2>
+  <h2 align="center">Movie App</h2>
 
    <p align="center">
-    A Netflix Clone built with Next.js, Firebase, React, and Tailwind CSS.
+   A Movie App built with React, using the The Movie Database API. Also using React Router, React Context API & Firebase Authentication to build this project.
   </p>
 
   <p>
