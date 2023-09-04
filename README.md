@@ -30,16 +30,16 @@
   git clone
   ```
 
-- <strong>Install NPM packages</strong>
+- <strong>Install yarn packages</strong>
 
   ```sh
-  npm install
+  yarn install
   ```
 
 - <strong>Run the project</strong>
 
   ```sh
-  npm run dev
+  yarn start
   ```
 
 - <strong>Open the project on your browser</strong>
@@ -58,12 +58,4 @@
 
 ![Netflix project](./movie.gif)
 
-In this project, I built a Netflix clone using Next.js, Firebase, React, and Tailwind CSS.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-  <br/>
+In this project I'm using React, React Router, Firebase, and The Movie Database API. I'm also using React Hooks, React Context API & Firebase Authentication to build this project.
