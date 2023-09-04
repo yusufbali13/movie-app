@@ -6,7 +6,7 @@
   <h2 align="center">Movie App</h2>
 
    <p align="center">
-   A Movie App built with React, using the The Movie Database API. Also using React Router, React Context API & Firebase Authentication to build this project.
+    A Movie App built with React, using the <a href="https://www.themoviedb.org/"> The Movie Database API</a>. Also using React Router, React Context API & Firebase Authentication to build this project.
   </p>
 
   <p>
