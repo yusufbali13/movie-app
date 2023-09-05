@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://milesstone-project.netlify.app/assets/avatar-b5a1fd7f.jpg">
-    <img src="https://o.remove.bg/downloads/11536078-e54f-48b7-ad8f-f0588a371931/images-removebg-preview-removebg-preview.png" width="130" height="130">
+  <a href="https://avatars.githubusercontent.com/u/119419061?v=4">
+    <img src="https://avatars.githubusercontent.com/u/119419061?v=4" width="130" height="130">
   </a>
   
   <h2 align="center">Movie App</h2>
